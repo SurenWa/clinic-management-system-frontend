@@ -4,6 +4,9 @@ import { lazy } from 'react';
 import MainLayout from 'layout/MainLayout';
 import Test from './Test';
 import Loadable from 'ui-component/Loadable';
+
+// dashboard routing
+const Analytics = Loadable(lazy(() => import('views/dashboard/Analytics')));
 // import AuthGuard from 'utils/route-guard/AuthGuard';
 
 // dashboard routing
@@ -141,6 +144,34 @@ const MainRoutes = {
         // </AuthGuard>
     ),
     children: [
+        {
+            path: '/dashboard/analytics',
+            element: <Analytics />
+        },
+        {
+            path: '/dashboard/add-user',
+            element: <Test string="Add User" />
+        },
+        {
+            path: '/dashboard/view-users',
+            element: <Test string="View Users" />
+        },
+        {
+            path: '/dashboard/add-role',
+            element: <Test string="Add Role" />
+        },
+        {
+            path: '/dashboard/view-roles',
+            element: <Test string="View All Roles" />
+        },
+        {
+            path: '/dashboard/add-department',
+            element: <Test string="Add Department" />
+        },
+        {
+            path: '/dashboard/view-departments',
+            element: <Test string="View Department" />
+        },
         // {
         //     path: '/widget/statistics',
         //     element: <WidgetStatistics />
@@ -493,7 +524,7 @@ const MainRoutes = {
         // },
         {
             path: '/dashboard/default',
-            element: <Test />
+            element: <Test string="test1" />
         }
         // {
         //     path: '/dashboard/analytics',

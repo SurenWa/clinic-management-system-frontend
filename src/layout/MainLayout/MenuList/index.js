@@ -20,24 +20,24 @@ const MenuList = () => {
     const { layout } = useConfig();
     const matchDownMd = useMediaQuery(theme.breakpoints.down('md'));
 
-    const getMenu = Menu();
-    const handlerMenuItem = () => {
-        const isFound = menuItem.items.some((element) => {
-            if (element.id === 'widget') {
-                return true;
-            }
-            return false;
-        });
+    // const getMenu = Menu();
+    // const handlerMenuItem = () => {
+    //     const isFound = menuItem.items.some((element) => {
+    //         if (element.id === 'widgets') {
+    //             return true;
+    //         }
+    //         return false;
+    //     });
 
-        if (getMenu?.id !== undefined && !isFound) {
-            menuItem.items.splice(1, 0, getMenu);
-        }
-    };
+    //     if (getMenu?.id !== undefined && !isFound) {
+    //         menuItem.items.splice(1, 0, getMenu);
+    //     }
+    // };
 
-    useEffect(() => {
-        handlerMenuItem();
-        // eslint-disable-next-line
-    }, []);
+    // useEffect(() => {
+    //     handlerMenuItem();
+    //     // eslint-disable-next-line
+    // }, []);
 
     // last menu-item to show in horizontal menu bar
     const lastItem = layout === LAYOUT_CONST.HORIZONTAL_LAYOUT && !matchDownMd ? HORIZONTAL_MAX_ITEM : null;

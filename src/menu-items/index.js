@@ -10,7 +10,8 @@ import other from './other';
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    items: [dashboard, application, forms, elements, pages, utilities, support, other]
+    // items: [dashboard, application, forms, elements, pages, utilities, support, other]
+    items: [application]
 };
 
 export default menuItems;

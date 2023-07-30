@@ -3,7 +3,21 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { IconApps, IconUserCheck, IconBasket, IconMessages, IconLayoutKanban, IconMail, IconCalendar, IconNfc } from '@tabler/icons';
+import {
+    IconApps,
+    IconUserCheck,
+    IconBasket,
+    IconMessages,
+    IconLayoutKanban,
+    IconMail,
+    IconCalendar,
+    IconNfc,
+    IconEmergencyBed,
+    IconCoinRupee,
+    IconCheckupList,
+    IconMedicineSyrup,
+    IconDeviceDesktopAnalytics
+} from '@tabler/icons';
 
 // constant
 const icons = {
@@ -14,7 +28,12 @@ const icons = {
     IconLayoutKanban,
     IconMail,
     IconCalendar,
-    IconNfc
+    IconNfc,
+    IconEmergencyBed,
+    IconCoinRupee,
+    IconCheckupList,
+    IconMedicineSyrup,
+    IconDeviceDesktopAnalytics
 };
 
 // ==============================|| APPLICATION MENU ITEMS ||============================== //
@@ -26,166 +45,229 @@ const application = {
     type: 'group',
     children: [
         {
+            id: 'analytics',
+            title: 'Analytics',
+            type: 'item',
+            icon: icons.IconDeviceDesktopAnalytics,
+            url: '/dashboard/analytics'
+        },
+        {
             id: 'users',
             title: <FormattedMessage id="users" />,
             type: 'collapse',
             icon: icons.IconUserCheck,
             children: [
                 {
-                    id: 'posts',
-                    title: <FormattedMessage id="social-profile" />,
+                    id: 'add-users',
+                    title: 'Add User',
                     type: 'item',
-                    url: '/user/social-profile/posts'
+                    url: '/dashboard/add-user'
                 },
                 {
-                    id: 'account-profile',
-                    title: <FormattedMessage id="account-profile" />,
-                    type: 'collapse',
-                    children: [
-                        {
-                            id: 'profile1',
-                            title: (
-                                <>
-                                    <FormattedMessage id="profile" /> 01
-                                </>
-                            ),
-                            type: 'item',
-                            url: '/user/account-profile/profile1'
-                        },
-                        {
-                            id: 'profile2',
-                            title: (
-                                <>
-                                    <FormattedMessage id="profile" /> 02
-                                </>
-                            ),
-                            type: 'item',
-                            url: '/user/account-profile/profile2'
-                        },
-                        {
-                            id: 'profile3',
-                            title: (
-                                <>
-                                    <FormattedMessage id="profile" /> 03
-                                </>
-                            ),
-                            type: 'item',
-                            url: '/user/account-profile/profile3'
-                        }
-                    ]
+                    id: 'view-users',
+                    title: 'View Users',
+                    type: 'item',
+                    url: '/dashboard/view-users'
                 },
                 {
-                    id: 'user-card',
-                    title: <FormattedMessage id="cards" />,
-                    type: 'collapse',
-                    children: [
-                        {
-                            id: 'card1',
-                            title: (
-                                <>
-                                    <FormattedMessage id="style" /> 01
-                                </>
-                            ),
-                            type: 'item',
-                            url: '/user/card/card1'
-                        },
-                        {
-                            id: 'card2',
-                            title: (
-                                <>
-                                    <FormattedMessage id="style" /> 02
-                                </>
-                            ),
-                            type: 'item',
-                            url: '/user/card/card2'
-                        },
-                        {
-                            id: 'card3',
-                            title: (
-                                <>
-                                    <FormattedMessage id="style" /> 03
-                                </>
-                            ),
-                            type: 'item',
-                            url: '/user/card/card3'
-                        }
-                    ]
+                    id: 'add-role',
+                    title: 'Add Role',
+                    type: 'item',
+                    url: '/dashboard/add-role'
                 },
                 {
-                    id: 'user-list',
-                    title: <FormattedMessage id="list" />,
-                    type: 'collapse',
-                    children: [
-                        {
-                            id: 'list1',
-                            title: (
-                                <>
-                                    <FormattedMessage id="style" /> 01
-                                </>
-                            ),
-                            type: 'item',
-                            url: '/user/list/list1'
-                        },
-                        {
-                            id: 'list2',
-                            title: (
-                                <>
-                                    <FormattedMessage id="style" /> 02
-                                </>
-                            ),
-                            type: 'item',
-                            url: '/user/list/list2'
-                        }
-                    ]
+                    id: 'view-roles',
+                    title: 'View Roles',
+                    type: 'item',
+                    url: '/dashboard/view-roles'
+                },
+                {
+                    id: 'add-department',
+                    title: 'Add Department',
+                    type: 'item',
+                    url: '/dashboard/add-department'
+                },
+                {
+                    id: 'view-departments',
+                    title: 'View Departments',
+                    type: 'item',
+                    url: '/dashboard/view-departments'
                 }
             ]
         },
         {
-            id: 'customer',
-            title: <FormattedMessage id="customer" />,
+            id: 'patient',
+            title: 'Patients',
             type: 'collapse',
-            icon: icons.IconBasket,
+            icon: icons.IconEmergencyBed,
             children: [
                 {
-                    id: 'customer-list',
-                    title: <FormattedMessage id="customer-list" />,
+                    id: 'add-patient',
+                    title: 'Add Patient',
                     type: 'item',
-                    url: '/customer/customer-list',
-                    breadcrumbs: false
+                    url: '/customer/customer-list'
                 },
                 {
-                    id: 'order-list',
-                    title: <FormattedMessage id="order-list" />,
+                    id: 'view-patient',
+                    title: 'View Patients',
                     type: 'item',
-                    url: '/customer/order-list',
-                    breadcrumbs: false
+                    url: '/customer/order-list'
                 },
                 {
-                    id: 'create-invoice',
-                    title: <FormattedMessage id="create-invoice" />,
+                    id: 'patient-feature-1',
+                    title: 'Patient Feature1',
                     type: 'item',
-                    url: '/customer/create-invoice',
-                    breadcrumbs: false
+                    url: '/customer/create-invoice'
                 },
                 {
-                    id: 'order-details',
-                    title: <FormattedMessage id="order-details" />,
+                    id: 'patient-feature-2',
+                    title: 'Patient Feature2',
                     type: 'item',
-                    url: '/customer/order-details'
+                    url: '/customer/create-invoice'
                 },
                 {
-                    id: 'product',
-                    title: <FormattedMessage id="product" />,
+                    id: 'patient-feature-3',
+                    title: 'Patient Feature3',
                     type: 'item',
-                    url: '/customer/product',
-                    breadcrumbs: false
+                    url: '/customer/create-invoice'
                 },
                 {
-                    id: 'product-review',
-                    title: <FormattedMessage id="product-review" />,
+                    id: 'patient-feature-4',
+                    title: 'Patient Feature4',
                     type: 'item',
-                    url: '/customer/product-review',
-                    breadcrumbs: false
+                    url: '/customer/create-invoice'
+                }
+            ]
+        },
+        {
+            id: 'payments',
+            title: 'Payments',
+            type: 'collapse',
+            icon: icons.IconCoinRupee,
+            children: [
+                {
+                    id: 'add-payment',
+                    title: 'Add Payment',
+                    type: 'item',
+                    url: '/customer/customer-list'
+                },
+                {
+                    id: 'view-payments',
+                    title: 'View All Payments',
+                    type: 'item',
+                    url: '/customer/order-list'
+                },
+                {
+                    id: 'payment-feature-1',
+                    title: 'Payment Feature1',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'payment-feature-2',
+                    title: 'Payment Feature2',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'payment-feature-3',
+                    title: 'Payment Feature3',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'payment-feature-4',
+                    title: 'Payment Feature4',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                }
+            ]
+        },
+        {
+            id: 'appointments',
+            title: 'Appointments',
+            type: 'collapse',
+            icon: icons.IconCheckupList,
+            children: [
+                {
+                    id: 'create-appointment',
+                    title: 'Create Appointment',
+                    type: 'item',
+                    url: '/customer/customer-list'
+                },
+                {
+                    id: 'view-appointments',
+                    title: 'View All Appointments',
+                    type: 'item',
+                    url: '/customer/order-list'
+                },
+                {
+                    id: 'appointment-feature-1',
+                    title: 'Appointment Feature1',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'appointment-feature-2',
+                    title: 'Appointment Feature2',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'appointment-feature-3',
+                    title: 'Appointment Feature3',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'appointment-feature-4',
+                    title: 'Appointment Feature4',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                }
+            ]
+        },
+        {
+            id: 'pharmacy',
+            title: 'Pharmacy',
+            type: 'collapse',
+            icon: icons.IconMedicineSyrup,
+            children: [
+                {
+                    id: 'add-medicine',
+                    title: 'Add Medicine',
+                    type: 'item',
+                    url: '/customer/customer-list'
+                },
+                {
+                    id: 'view-medicine',
+                    title: 'View All Medicines',
+                    type: 'item',
+                    url: '/customer/order-list'
+                },
+                {
+                    id: 'pharmacy-feature-1',
+                    title: 'Pharmacy Feature1',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'pharmacy-feature-2',
+                    title: 'Pharmacy Feature2',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'pharmacy-feature-3',
+                    title: 'Pharmacy Feature3',
+                    type: 'item',
+                    url: '/customer/create-invoice'
+                },
+                {
+                    id: 'pharmacy-feature-4',
+                    title: 'Pharmacy Feature4',
+                    type: 'item',
+                    url: '/customer/create-invoice'
                 }
             ]
         },
@@ -195,13 +277,6 @@ const application = {
             type: 'item',
             icon: icons.IconMessages,
             url: '/app/chat'
-        },
-        {
-            id: 'kanban',
-            title: 'Kanban',
-            type: 'item',
-            icon: icons.IconLayoutKanban,
-            url: '/app/kanban/board'
         },
         {
             id: 'mail',
@@ -237,40 +312,6 @@ const application = {
                     type: 'item',
                     url: '/app/contact/c-list',
                     breadcrumbs: false
-                }
-            ]
-        },
-        {
-            id: 'e-commerce',
-            title: <FormattedMessage id="e-commerce" />,
-            type: 'collapse',
-            icon: icons.IconBasket,
-            children: [
-                {
-                    id: 'products',
-                    title: <FormattedMessage id="products" />,
-                    type: 'item',
-                    url: '/e-commerce/products'
-                },
-                {
-                    id: 'product-details',
-                    title: <FormattedMessage id="product-details" />,
-                    type: 'item',
-                    url: '/e-commerce/product-details/1',
-                    breadcrumbs: false
-                },
-                {
-                    id: 'product-list',
-                    title: <FormattedMessage id="product-list" />,
-                    type: 'item',
-                    url: '/e-commerce/product-list',
-                    breadcrumbs: false
-                },
-                {
-                    id: 'checkout',
-                    title: <FormattedMessage id="checkout" />,
-                    type: 'item',
-                    url: '/e-commerce/checkout'
                 }
             ]
         }
